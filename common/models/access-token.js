@@ -239,14 +239,14 @@ module.exports = function(AccessToken) {
       var User = userRelation && userRelation.modelTo;
 
       // redefine user model if accessToken's principalType is available
-      if (this.principalType) {
-        User = AccessToken.registry.findModel(this.principalType);
-        if (!User) {
-          process.nextTick(function() {
-            return cb(null, false);
-          });
-        }
-      }
+      // if (this.principalType) {
+      //   User = AccessToken.registry.findModel(this.principalType);
+      //   if (!User) {
+      //     process.nextTick(function() {
+      //       return cb(null, false);
+      //     });
+      //   }
+      // }
 
       var now = Date.now();
       var created = this.created.getTime();
